@@ -16,4 +16,4 @@ bases:
 
 images:
 - name: iaroki/tgsaver
-  newTag: "1.0"
+  newTag: "1.1"
