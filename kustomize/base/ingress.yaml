@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     external-dns.alpha.kubernetes.io/hostname: tgsaver.omo.name
-    cert-manager.io/issuer: origin-ca-issuer
+    cert-manager.io/issuer: grafana-issuer
     cert-manager.io/issuer-kind: OriginIssuer
     cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
     cert-manager.io/duration: 2160h
