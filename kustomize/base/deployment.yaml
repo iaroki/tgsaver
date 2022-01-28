@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tgsaver
+spec:
+  replicas: 1
+  template:
+    spec:
+      nodeSelector:
+        application: services
+      containers:
+      - name: tgsaver
+        image: iaroki/tgsaver:latest
+        imagePullPolicy: Always
+        env:
+        - name: TELEGRAM_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: tgsaver-token
+              key: tgsaver_token
+        - name: CHAT_ID
+          valueFrom:
+            secretKeyRef:
+              name: tgsaver-chat
+              key: tgsaver_chat
+        ports:
+        - containerPort: 8888
+          name: http
+          protocol: TCP
