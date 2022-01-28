@@ -1,5 +1,5 @@
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tgsaver
@@ -22,5 +22,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: tgsaver
-              servicePort: 8888
+              service:
+                name: tgsaver
+                port:
+                  number: 8888
