@@ -3,6 +3,14 @@ kind: Kustomization
 
 namespace: monitoring
 
+commonLabels:
+  app: tgsaver
+
+secretGenerator:
+- name: tgsaver
+  envs:
+  - env
+
 bases:
 - ../../base
 
