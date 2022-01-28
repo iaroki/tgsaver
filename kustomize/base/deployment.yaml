@@ -16,13 +16,13 @@ spec:
         - name: TELEGRAM_TOKEN
           valueFrom:
             secretKeyRef:
-              name: tgsaver-token
-              key: tgsaver_token
+              name: tgsaver
+              key: telegram_token
         - name: CHAT_ID
           valueFrom:
             secretKeyRef:
-              name: tgsaver-chat
-              key: tgsaver_chat
+              name: tgsaver
+              key: chat_id
         ports:
         - containerPort: 8888
           name: http
