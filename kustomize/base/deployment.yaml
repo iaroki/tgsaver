@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       nodeSelector:
-        application: services
+        application: monitoring
       containers:
       - name: tgsaver
         image: iaroki/tgsaver:latest
