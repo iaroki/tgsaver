@@ -22,7 +22,7 @@ def home_post():
         resp_dict = format_response(data)
         resp = json.jsonify(resp_dict)
 
-    bot.sendMessage(chat, f"{resp_dict['sender']}{os.linesep}{resp_dict['text']}")
+    bot.sendMessage(chat, resp_dict['text'])
     return resp
 
 def format_response(event):
@@ -37,11 +37,8 @@ def format_response(event):
 
     elif event['type'] == 'MESSAGE':
         text = event['message']['text']
-        sender = event['message']['sender']['displayName']
-        # if '//save' in event['message']['text']:
-        #     text = 'Your message SAVED!'
 
-    return {'sender': sender, 'text': text}
+    return {'text': text}
 
 @app.route('/', methods=['GET'])
 def home_get():
