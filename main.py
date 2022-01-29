@@ -19,10 +19,11 @@ def home_post():
         logging.info('Bot removed from a space')
 
     else:
-        resp_dict = format_response(data)
+        resp_saved = format_response(data)
+        resp_dict = {'text': 'Saved!'}
         resp = json.jsonify(resp_dict)
 
-    bot.sendMessage(chat, resp_dict['text'])
+    bot.sendMessage(chat, resp_saved['text'])
     return resp
 
 def format_response(event):
